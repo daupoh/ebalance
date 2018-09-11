@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eBalance", "eBalance\eBalan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "consoleEBalance", "consoleEBalance\consoleEBalance.csproj", "{42F3BF5D-608D-4B69-8722-2020EBE16F55}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityTest", "EntityTest\EntityTest.csproj", "{856D6C45-455A-490E-B56D-CE5B16D3FA5F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{42F3BF5D-608D-4B69-8722-2020EBE16F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42F3BF5D-608D-4B69-8722-2020EBE16F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42F3BF5D-608D-4B69-8722-2020EBE16F55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{856D6C45-455A-490E-B56D-CE5B16D3FA5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{856D6C45-455A-490E-B56D-CE5B16D3FA5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{856D6C45-455A-490E-B56D-CE5B16D3FA5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{856D6C45-455A-490E-B56D-CE5B16D3FA5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
