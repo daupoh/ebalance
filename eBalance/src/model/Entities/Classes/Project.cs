@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eBalance.src.controller.Holders;
 using eBalance.src.controller.NamesHolder;
 using eBalance.src.model.Interfaces;
 
@@ -20,13 +21,37 @@ namespace eBalance.src.model.Classes
         }
         public Project(string name)
         {
-            projectName = name;
-            projectStandarts = new List<IStandart>();
+            if (name != "" && name!=null)
+            {
+                projectName = name;
+
+                projectStandarts = new List<IStandart>();
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.projectCantBeCreatedWithoutName);
+            }
         }
         public Project(IList<IStandart> standarts, string name)
         {
-            projectName = name;
-            projectStandarts = standarts;
+            if (name != "" && name != null)
+            {
+                projectName = name;
+
+                projectStandarts = new List<IStandart>();
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.projectCantBeCreatedWithoutName);
+            }
+            if (standarts != null)
+            {
+                projectStandarts = standarts;
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.projectCantHaveNullStandartList);
+            }
         }
 
         public string getName()
@@ -35,8 +60,15 @@ namespace eBalance.src.model.Classes
         }
         public void addStandart(IStandart standart)
         {
-            standart.addParrent(this);
-            projectStandarts.Add(standart);
+            if (standart != null)
+            {
+                standart.addParrent(this);
+                projectStandarts.Add(standart);
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.projectCantAddNullStandart);
+            }
         }
         public IList<IStandart> getProjectStandarts()
         {

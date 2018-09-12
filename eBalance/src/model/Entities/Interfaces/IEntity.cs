@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eBalance.src.model.Interfaces
 {
-    interface IEntity
+   interface IEntity
     {
         string getName();
         

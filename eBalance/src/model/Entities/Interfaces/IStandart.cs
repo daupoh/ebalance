@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eBalance.src.model.Interfaces
 {
-    interface IStandart:IEntity
+     interface IStandart:IEntity
     {
         void addGrade(IGrade grade);
         void addGrades(IList<IGrade> grades);

@@ -28,6 +28,13 @@ namespace eBalance.src.model.Classes
             standartName = name;
             listEntitiesInitialize();
         }
+        public Standart(string name, int countGrades)
+        {
+            standartName = name;
+            listEntitiesInitialize();
+            generateGrades(countGrades);
+
+        }
         public Standart(IProject parent)
         {
             
@@ -134,6 +141,15 @@ namespace eBalance.src.model.Classes
                 }
             }
             return isProjectNotParentYet;
+        }
+        private void generateGrades(int countGrades)
+        {
+            for (int i=0;i<countGrades;i++)
+            {
+                string nameGrade = NameHolder.defaultGradeName + Convert.ToString(i);
+                grades.Add(new Grade(nameGrade));
+            }
+            
         }
 
     }

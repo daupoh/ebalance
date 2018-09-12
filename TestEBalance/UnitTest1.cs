@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace EntityTest
+namespace TestEBalance
 {
     [TestClass]
     public class UnitTest1
@@ -9,6 +9,7 @@ namespace EntityTest
         [TestMethod]
         public void TestMethod1()
         {
+            
         }
     }
 }
