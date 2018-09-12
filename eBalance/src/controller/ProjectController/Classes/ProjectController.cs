@@ -18,11 +18,28 @@ namespace eBalance.src.controller.ProjectController.Classes
 
         public string createProject(string name)
         {
-            project = new Project(name);
+           if (name!=null && name!="")
+            {
+                project = new Project(name);
+            }
+           else
+            {
+                project = new Project();
+            }
+            return project.getName();
             
         }
         public string addStandart(string name)
         {
+            IStandart standart;
+            if (name != null && name != "")
+            {
+                standart = new Standart(project,name);
+            }
+            else
+            {
+                standart = new Standart(project);
+            }
 
         }
     }

@@ -25,14 +25,36 @@ namespace eBalance.src.model.Classes
         }
         public Standart(string name)
         {
-            standartName = name;
+            if (name!=null && name!="")
+            {
+                standartName = name;
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.standartCantBeCreatedWithoutName);
+            }
+            
             listEntitiesInitialize();
         }
         public Standart(string name, int countGrades)
         {
-            standartName = name;
+            if (name != null && name != "")
+            {
+                standartName = name;
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.standartCantBeCreatedWithoutName);
+            }
             listEntitiesInitialize();
-            generateGrades(countGrades);
+            if (countGrades > 1)
+            {
+                generateGrades(countGrades);
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.standartCantBeWithLesserThanTwoGrades);
+            }
 
         }
         public Standart(IProject parent)
@@ -40,13 +62,34 @@ namespace eBalance.src.model.Classes
             
             standartName = NameHolder.defaultStandartName;
             listEntitiesInitialize();
-            addParrent(parent);
+            if (parent != null)
+            {
+                addParrent(parent);
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.standartAlreadyHaveThisParent);
+            }
         }
         public Standart(IProject parent, string name)
-        {            
-            standartName = name;
+        {
+            if (name != null && name != "")
+            {
+                standartName = name;
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.standartCantBeCreatedWithoutName);
+            }
             listEntitiesInitialize();
-            addParrent(parent);
+            if (parent != null)
+            {
+                addParrent(parent);
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.standartAlreadyHaveThisParent);
+            }
 
         }
         public int CountGrades
@@ -68,12 +111,12 @@ namespace eBalance.src.model.Classes
                 }
                 else
                 {
-                    throw new FormatException(ErrorHolder.notUniqueGradeAddedToStandartError);
+                    throw new FormatException(ErrorHolder.standartCantAddnotUniqueGrade);
                 }
             }
             else
             {
-                throw new FormatException(ErrorHolder.toManyGradesForStandart);
+                throw new FormatException(ErrorHolder.standartCantHaveToMuchGrades);
             }
         }
         public void addGrades(IList<IGrade> grades)
@@ -95,7 +138,7 @@ namespace eBalance.src.model.Classes
             }
             else
             {
-                throw new FormatException(ErrorHolder.projectIsAlreadyParentToStandart);
+                throw new FormatException(ErrorHolder.standartAlreadyHaveThisParent);
             }
         }
 
