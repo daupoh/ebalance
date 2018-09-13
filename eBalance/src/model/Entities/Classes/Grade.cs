@@ -21,42 +21,85 @@ namespace eBalance.src.model.Classes
         }
         public Grade(string name)
         {
-            gradeName = name;
+            if (name != null && name != "")
+            {
+                gradeName = name;
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.gradeCantBeCreatedWithoutName);
+            }
             standartParents = new List<IStandart>();
         }
         public Grade(IStandart parent, string name)
         {
-            gradeName = name;
-            standartParents = new List<IStandart>();
-            addParentStandart(parent);
+            if (name != null && name != "")
+            {
+                gradeName = name;
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.gradeCantBeCreatedWithoutName);
+            }
+            if (parent != null)
+            {
+                standartParents = new List<IStandart>();
+                addParentStandart(parent);
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.gradeCantHaveNullStandartParent);
+            }
         }
         public Grade(IStandart parent)
         {
             gradeName = NameHolder.defaultGradeName;
-            standartParents = new List<IStandart>();
-            addParentStandart(parent);
+            if (parent != null)
+            {
+                standartParents = new List<IStandart>();
+                addParentStandart(parent);
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.gradeCantHaveNullStandartParent);
+            }
         }
 
         public string getName() { return gradeName; }
         public void addParentStandart(IStandart standart)
         {
-            if (isStandartNotParentYet(standart))
+            if (standart != null)
             {
-                standartParents.Add(standart);
+                if (isStandartNotParentYet(standart))
+                {
+                    standartParents.Add(standart);
+                }
+                else
+                {
+                    throw new FormatException(ErrorHolder.standartIsAlreadyParentToGrade);
+                }
             }
             else
             {
-                throw new FormatException(ErrorHolder.standartIsAlreadyParentToGrade);
+                throw new FormatException(ErrorHolder.gradeCantHaveNullStandartParent);
             }
+            
         }
         public bool Equal(IGrade grade)
         {
-            bool isEqual = false;
-            if (grade.getName()==getName())
+            if (grade != null)
             {
-                isEqual=true;
+                bool isEqual = false;
+                if (grade.getName() == getName())
+                {
+                    isEqual = true;
+                }
+                return isEqual;
             }
-            return isEqual;
+            else
+            {
+                throw new FormatException(ErrorHolder.gradeCantCompareWithNull);
+            }
         }
         //---private-----------------------------
 

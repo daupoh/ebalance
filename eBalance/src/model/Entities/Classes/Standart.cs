@@ -103,33 +103,49 @@ namespace eBalance.src.model.Classes
         }
         public void addGrade(IGrade grade)
         {
-            if (CountGrades < NameHolder.maximumGradesInStandart)
+            if (grade != null)
             {
-                if (isGradeHaveUniqueName(grade))
+                if (CountGrades < NameHolder.maximumGradesInStandart)
                 {
-                    grades.Add(grade);
+                    if (isGradeHaveUniqueName(grade))
+                    {
+                        grades.Add(grade);
+                    }
+                    else
+                    {
+                        throw new FormatException(ErrorHolder.standartCantAddNotUniqueGrade);
+                    }
                 }
                 else
                 {
-                    throw new FormatException(ErrorHolder.standartCantAddnotUniqueGrade);
+                    throw new FormatException(ErrorHolder.standartCantHaveToMuchGrades);
                 }
             }
             else
             {
-                throw new FormatException(ErrorHolder.standartCantHaveToMuchGrades);
+                throw new FormatException(ErrorHolder.standartCantAddNullGrade);
             }
         }
         public void addGrades(IList<IGrade> grades)
-        {            
-            foreach(IGrade grade in grades)
+        {
+            if (grades != null && grades.Count>0)
             {
-                addGrade(grade);
+                foreach (IGrade grade in grades)
+                {
+                    addGrade(grade);
+                }
+            }
+            else
+            {
+                throw new FormatException(ErrorHolder.standartCantAddNullListGrades);
             }
         }
+
         public IList<IGrade> getGrades()
         {
             return grades;
         }
+
         public void addParrent(IProject project)
         {           
             if (isProjectNotParentYet(project))
@@ -145,11 +161,18 @@ namespace eBalance.src.model.Classes
         public bool Equal(IStandart standart)
         {
             bool isEqual = false;
-            if (standart.getName() == getName())
+            if (standart != null)
             {
-                isEqual = true;
+                if (standart.getName() == getName())
+                {
+                    isEqual = true;
+                }
+                return isEqual;
             }
-            return isEqual;
+            else
+            {
+                throw new FormatException(ErrorHolder.standartCantCompareWithNull);
+            }
         }
 
         //------private------------------
