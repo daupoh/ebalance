@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eBalance.src.controller.Holders
 {
-    class ErrorHolder
+    public static class ErrorHolder
     {
         public static string
            standartCantAddNotUniqueGrade = "Ошибка при добавлении оценки стандарту. Оценка с таким именем уже присутствует.",

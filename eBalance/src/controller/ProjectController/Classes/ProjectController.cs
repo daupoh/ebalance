@@ -21,6 +21,15 @@ namespace eBalance.src.controller.ProjectController.Classes
         {
             initializeProjectList();
         }
+        public void Dispose()
+        {
+            project = null;
+            standartGrades.Clear();
+            standartGrades = null;
+            projectStandarts.Clear();
+            projectStandarts = null;
+            currentStandart = null;            
+        }
 
         public void createProject(string name)
         {
