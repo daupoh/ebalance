@@ -213,7 +213,9 @@ namespace eBalance.src.model.Classes
             for (int i=0;i<countGrades;i++)
             {
                 string nameGrade = NameHolder.defaultGradeName + Convert.ToString(i);
-                grades.Add(new Grade(nameGrade));
+                IGrade grade = new Grade(nameGrade);
+                grade.addParentStandart(this);
+                grades.Add(grade);
             }
             
         }

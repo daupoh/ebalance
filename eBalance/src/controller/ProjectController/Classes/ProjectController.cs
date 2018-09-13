@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace eBalance.src.controller.ProjectController.Classes
 {
@@ -16,31 +17,62 @@ namespace eBalance.src.controller.ProjectController.Classes
         IStandart currentStandart;
         IList<IGrade> standartGrades;
 
-        public string createProject(string name)
+        public ProjectController()
         {
-           if (name!=null && name!="")
-            {
-                project = new Project(name);
-            }
-           else
-            {
-                project = new Project();
-            }
-            return project.getName();
-            
+            initializeProjectList();
         }
-        public string addStandart(string name)
+
+        public void createProject(string name)
+        {
+            project = new Project(name);    
+        }
+        public void addStandart(string name, int count)
         {
             IStandart standart;
-            if (name != null && name != "")
-            {
-                standart = new Standart(project,name);
-            }
-            else
-            {
-                standart = new Standart(project);
-            }
+            standart = new Standart(name,count);
+            standart.addParrent(project);           
+            projectStandarts.Add(standart);
+            standartGrades = standart.getGrades();
+            currentStandart = standart;
 
         }
+
+        public string getProjectName()
+        {
+            return project.getName();
+        }
+        public string getCurrentStandartName()
+        {
+            return currentStandart.getName();
+        }
+        public IList<string> getProjectStandartsNames()
+        {
+            IList<string> standartNames = new List<string>();
+
+            foreach(IStandart standart in projectStandarts)
+            {
+                standartNames.Add(standart.getName());
+            }
+
+            return standartNames;
+        }
+        public IList<string> getStandartGradesNames(string standartName)
+        {
+            IList<string> gradeOfCurrentStandartNames = new List<string>();
+            foreach(IGrade grade in standartGrades)
+            {
+                gradeOfCurrentStandartNames.Add(grade.getName());
+            }
+            return gradeOfCurrentStandartNames;
+        }
+
+        //---private----------------------
+
+        private void initializeProjectList()
+        {
+            projectStandarts = new List<IStandart>();
+            standartGrades = new List<IGrade>();
+        }
+        
     }
 }
