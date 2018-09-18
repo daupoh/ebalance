@@ -16,7 +16,7 @@ namespace eBalance.src.model.Classes
 
         public Project()
         {
-            projectName = NameHolder.defaultProjectName;
+            projectName = NamesValuesHolder.defaultProjectName;
             projectStandarts = new List<IStandart>();    
         }
         public Project(string name)
@@ -58,12 +58,23 @@ namespace eBalance.src.model.Classes
         {
             return projectName;
         }
+        public IList<string> getParentName()
+        {
+            return null;
+        }
         public void addStandart(IStandart standart)
         {
             if (standart != null)
             {
-                standart.addParrent(this);
-                projectStandarts.Add(standart);
+                if (!isThatNameAlreadyUsedForAnotherStandart(standart))
+                {
+                    
+                    projectStandarts.Add(standart);
+                }
+                else
+                {
+                    throw new FormatException(ErrorHolder.projectCantAddTwoStandartWithSameNames);
+                }
             }
             else
             {
@@ -73,6 +84,20 @@ namespace eBalance.src.model.Classes
         public IList<IStandart> getProjectStandarts()
         {
             return projectStandarts;
+        }
+
+        private bool isThatNameAlreadyUsedForAnotherStandart(IStandart standart)
+        {
+            bool isIt = false;
+            foreach(IStandart stndrt in projectStandarts)
+            {
+                if (standart.getName()==stndrt.getName())
+                {
+                    isIt = true;
+                    break;
+                }
+            }
+            return isIt;
         }
     }
 }

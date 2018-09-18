@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\controller\Holders\ErrorHolder.cs" />
-    <Compile Include="src\controller\Holders\NameHolder.cs" />
+    <Compile Include="src\controller\Holders\NamesValuesHolder.cs" />
     <Compile Include="src\controller\ProjectController\Classes\ProjectController.cs" />
     <Compile Include="src\controller\ProjectController\Interfaces\IProjectController.cs" />
     <Compile Include="src\model\Entities\Classes\Grade.cs" />

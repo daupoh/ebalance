@@ -12,12 +12,12 @@ namespace eBalance.src.model.Classes
     class Grade:IGrade
     {
         string gradeName = "";
-        IList<IStandart> standartParents; 
+        IList<IStandart> gradeParents; 
 
         public Grade()
         {
-            gradeName = NameHolder.defaultGradeName;
-            standartParents = new List<IStandart>();
+            gradeName = NamesValuesHolder.defaultGradeName;
+            gradeParents = new List<IStandart>();
         }
         public Grade(string name)
         {
@@ -29,7 +29,7 @@ namespace eBalance.src.model.Classes
             {
                 throw new FormatException(ErrorHolder.gradeCantBeCreatedWithoutName);
             }
-            standartParents = new List<IStandart>();
+            gradeParents = new List<IStandart>();
         }
         public Grade(IStandart parent, string name)
         {
@@ -41,38 +41,35 @@ namespace eBalance.src.model.Classes
             {
                 throw new FormatException(ErrorHolder.gradeCantBeCreatedWithoutName);
             }
-            if (parent != null)
-            {
-                standartParents = new List<IStandart>();
-                addParentStandart(parent);
-            }
-            else
-            {
-                throw new FormatException(ErrorHolder.gradeCantHaveNullStandartParent);
-            }
+            gradeParents = new List<IStandart>();
+            addParentStandart(parent);
+           
         }
         public Grade(IStandart parent)
         {
-            gradeName = NameHolder.defaultGradeName;
-            if (parent != null)
-            {
-                standartParents = new List<IStandart>();
-                addParentStandart(parent);
-            }
-            else
-            {
-                throw new FormatException(ErrorHolder.gradeCantHaveNullStandartParent);
-            }
+            gradeName = NamesValuesHolder.defaultGradeName;
+            gradeParents = new List<IStandart>();
+            addParentStandart(parent);
+            
         }
 
         public string getName() { return gradeName; }
+        public IList<string> getParentName()
+        {
+            IList<string> parentsNames = new List<string>();
+            foreach(IStandart std in gradeParents)
+            {
+                parentsNames.Add(std.getName());
+            }
+            return parentsNames;
+        }
         public void addParentStandart(IStandart standart)
         {
             if (standart != null)
             {
                 if (isStandartNotParentYet(standart))
                 {
-                    standartParents.Add(standart);
+                    gradeParents.Add(standart);
                 }
                 else
                 {
@@ -106,7 +103,7 @@ namespace eBalance.src.model.Classes
         private bool isStandartNotParentYet(IStandart standart)
         {
             bool isStandartNotParentYet = true;
-            foreach (IStandart stdrt in standartParents)
+            foreach (IStandart stdrt in gradeParents)
             {
                 if (stdrt.Equals(standart))
                 {

@@ -9,6 +9,6 @@ namespace eBalance.src.model.Interfaces
    interface IEntity
     {
         string getName();
-        
+        IList<string> getParentName();
     }
 }

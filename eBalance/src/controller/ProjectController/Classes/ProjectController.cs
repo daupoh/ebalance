@@ -39,7 +39,10 @@ namespace eBalance.src.controller.ProjectController.Classes
         {
             IStandart standart;
             standart = new Standart(name,count);
-            standart.addParrent(project);           
+
+            standart.addParrent(project);
+            project.addStandart(standart);
+
             projectStandarts.Add(standart);
             standartGrades = standart.getGrades();
             currentStandart = standart;

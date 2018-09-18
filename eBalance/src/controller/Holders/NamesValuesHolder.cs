@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace eBalance.src.controller.NamesHolder
 {
-    public static class NameHolder
+    public static class NamesValuesHolder
     {
         public static string
             defaultStandartName = "NewStandart",
