@@ -63,6 +63,8 @@
     <Compile Include="src\model\Entities\Interfaces\IGrade.cs" />
     <Compile Include="src\model\Entities\Interfaces\IProject.cs" />
     <Compile Include="src\model\Entities\Interfaces\IStandart.cs" />
+    <Compile Include="src\test\TestDataHolder.cs" />
+    <Compile Include="src\test\TestMessageHolder.cs" />
     <Compile Include="src\view\Forms\fmMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,9 +96,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\test\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

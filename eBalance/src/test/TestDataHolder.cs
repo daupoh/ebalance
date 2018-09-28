@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestEBalance
 {
-    static class TestDataHolder
+   public static class TestDataHolder
     {        
         public static string
             correctProjectName = "MyProject",
@@ -21,7 +21,8 @@ namespace TestEBalance
             toManyGradesCount = NamesValuesHolder.maximumGradesInStandart+1,
             zeroCount=0,
             lessThanZeroCount = -5,
-            oneCount=1
+            oneCount=1,
+            moreThanZeroCount = 7
             ;
     }
 }

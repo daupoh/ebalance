@@ -10,31 +10,27 @@ namespace TestEBalance
     [TestClass]
     public class ProjectControllerTest
     {
-        IProjectController pc;
-     
-
+        IProjectController pc;    
+        
         [TestInitialize]
         public void prepareProjectController()
         {
             pc = new ProjectController();             
         }
-
         [TestCleanup]
         public void clearProjectController()
         {
             pc.Dispose();
             pc = null;
         }
-        //------positive tests
-
                 
         [TestCategory("positive test"),TestMethod()]      
         public void canCreateProjectWithCorrectName()
         {
             pc.createProject(TestDataHolder.correctProjectName);
             Assert.AreEqual(TestDataHolder.correctProjectName, pc.getProjectName(), TestMessageHolder.projectExpectedNameNotEqualActualName);
+            
         }
-
 
         [DataRow(0)]
         [DataRow(1)]
@@ -60,7 +56,6 @@ namespace TestEBalance
             Assert.AreEqual(TestDataHolder.correctStandartName, standartNames[countOfStandarts], TestMessageHolder.standartAddedNamesIsWrong);
         } 
 
-
         private void createProjectForStandarts(string name)
         {
             pc.createProject(name);
@@ -74,9 +69,6 @@ namespace TestEBalance
             }
 
         }
-        
-        //------negative tests
-        
         
         [DynamicData(nameof(testDataIncorrectProjectNames),DynamicDataSourceType.Method)]
         [TestCategory("negative test"),DataTestMethod]
@@ -112,22 +104,6 @@ namespace TestEBalance
             Assert.Fail(TestMessageHolder.standartAddExpectedExceptionDsntThrow);
 
         }
-        [DynamicData(nameof(testDataIncorrectStandartNamesAndCountsOfGrades), DynamicDataSourceType.Method)]
-        [TestCategory("negative test"), DataTestMethod]
-        public void cantAddStandartsWithIncorrectNamesOrCount(string standartName, int countOfGrades, string errorMessage)
-        {          
-            createProjectForStandarts(TestDataHolder.correctProjectName);
-            try
-            {
-                pc.addStandart(standartName, countOfGrades);
-            }
-            catch (FormatException fe)
-            {
-                Assert.AreEqual(errorMessage, fe.Message, TestMessageHolder.standartAddedWithIncorrectData);                
-                return;
-            }
-            Assert.Fail(TestMessageHolder.standartAddExpectedExceptionDsntThrow);
-        }
 
         [TestMethod]
         public void cantAddStandartWithoutProject()
@@ -144,12 +120,22 @@ namespace TestEBalance
             Assert.Fail(TestMessageHolder.standartAddExpectedExceptionDsntThrow);
         }
 
-        private static IEnumerable<object[]> testDataIncorrectProjectNames()
-        {
-            yield return new object[] { TestDataHolder.EmptyName,ErrorHolder.projectCantBeCreatedWithoutName};
-            yield return new object[] {  TestDataHolder.NullName,ErrorHolder.projectCantBeCreatedWithoutName};
-
-        }
+        [DynamicData(nameof(testDataIncorrectStandartNamesAndCountsOfGrades), DynamicDataSourceType.Method)]
+        [TestCategory("negative test"), DataTestMethod]
+        public void cantAddStandartsWithIncorrectNamesOrCount(string standartName, int countOfGrades, string errorMessage)
+        {          
+            createProjectForStandarts(TestDataHolder.correctProjectName);
+            try
+            {
+                pc.addStandart(standartName, countOfGrades);
+            }
+            catch (FormatException fe)
+            {
+                Assert.AreEqual(errorMessage, fe.Message, TestMessageHolder.standartAddedWithIncorrectData);                
+                return;
+            }
+            Assert.Fail(TestMessageHolder.standartAddExpectedExceptionDsntThrow);
+        }       
         private static IEnumerable<object[]> testDataIncorrectStandartNamesAndCountsOfGrades()
         {
             yield return new object[] { TestDataHolder.EmptyName, TestDataHolder.defaultCountOfGrades,ErrorHolder.standartCantBeCreatedWithoutName };
@@ -158,6 +144,13 @@ namespace TestEBalance
             yield return new object[] { TestDataHolder.correctStandartName, TestDataHolder.oneCount, ErrorHolder.standartCantBeWithLesserThanTwoGrades };
             yield return new object[] { TestDataHolder.correctStandartName, TestDataHolder.lessThanZeroCount, ErrorHolder.standartCantBeWithLesserThanTwoGrades };
             yield return new object[] { TestDataHolder.correctStandartName, TestDataHolder.toManyGradesCount, ErrorHolder.standartCantHaveToMuchGrades };
+        }
+
+        private static IEnumerable<object[]> testDataIncorrectProjectNames()
+        {
+            yield return new object[] { TestDataHolder.EmptyName, ErrorHolder.projectCantBeCreatedWithoutName };
+            yield return new object[] { TestDataHolder.NullName, ErrorHolder.projectCantBeCreatedWithoutName };
+
         }
 
 

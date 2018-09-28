@@ -9,7 +9,7 @@ namespace eBalance.src.controller.ProjectController.Interfaces
 {
     public interface IProjectController
     {
-        void Dispose();
+       
 
         void createProject(string name);
         void addStandart(string name, int count);
@@ -18,5 +18,6 @@ namespace eBalance.src.controller.ProjectController.Interfaces
         string getCurrentStandartName();
         IList<string> getProjectStandartsNames();
         IList<string> getStandartGradesNames(string standartName);
+        void Dispose();
     }
 }
