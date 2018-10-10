@@ -1,4 +1,5 @@
-﻿using eBalance.src.controller.ProjectController.Interfaces;
+﻿using eBalance.src.controller.Holders;
+using eBalance.src.controller.ProjectController.Interfaces;
 using eBalance.src.model.Classes;
 using eBalance.src.model.Interfaces;
 using System;
@@ -51,16 +52,28 @@ namespace eBalance.src.controller.ProjectController.Classes
 
         public string getProjectName()
         {
+            if (project==null)
+            {
+                throw new Exception(ErrorHolder.controllerCantReturnNameOfEmtyProject);
+            }
             return project.getName();
         }
         public string getCurrentStandartName()
         {
+            if (currentStandart == null)
+            {
+                throw new Exception(ErrorHolder.controllerCantReturnNameOfEmptyCurentStandart);
+            }
             return currentStandart.getName();
         }
+
         public IList<string> getProjectStandartsNames()
         {
             IList<string> standartNames = new List<string>();
-
+            if (projectStandarts==null)
+            {
+                throw new Exception(ErrorHolder.controllerCantReturnListOfStandarts);
+            }
             foreach(IStandart standart in projectStandarts)
             {
                 standartNames.Add(standart.getName());
@@ -71,6 +84,10 @@ namespace eBalance.src.controller.ProjectController.Classes
         public IList<string> getStandartGradesNames(string standartName)
         {
             IList<string> gradeOfCurrentStandartNames = new List<string>();
+            if (standartGrades==null)
+            {
+                throw new Exception(ErrorHolder.controllerCantReturnListOfGrades);
+            }
             foreach(IGrade grade in standartGrades)
             {
                 gradeOfCurrentStandartNames.Add(grade.getName());

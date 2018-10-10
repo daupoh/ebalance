@@ -31,7 +31,12 @@ namespace eBalance.src.controller.Holders
            projectCantAddNullStandart = "Ошибка при добавлении стандарта в проект. Стандарт не может быть равен Null",
             projectCantAddTwoStandartWithSameNames = "Ошибка при добавлении стандарта в проект. " +
             "Стандарт не может быть добавлен, так как стандарт с таким именем уже добавлен"
+            ,projectDsntHaveParrents = "Ошибка. Проект не может иметь родителя"
 
+            ,controllerCantReturnNameOfEmtyProject ="Ошибка при возвращении имени проекта. Невозможно вернуть имя проекта равного Null"
+            ,controllerCantReturnNameOfEmptyCurentStandart ="Ошибка при возвращении имени текущего стандарта. Невозможно вернуть имя стандарта равного Null"
+            ,controllerCantReturnListOfStandarts = "Ошибка при возвращении списка стандартов проекта. Невозможно вернуть список стандартов равный Null. "
+            ,controllerCantReturnListOfGrades = "Ошибка при возвращении списка оценок стандарта. Невозможно вернуть список оценок равный Null."
             ;
 
     }

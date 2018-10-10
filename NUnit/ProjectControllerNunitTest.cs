@@ -67,6 +67,7 @@ namespace NUnit
             list.Add(new TestCaseData(TestDataHolder.moreThanZeroCount));
             return list;
         }
+      
 
         private void createProjectForStandarts(string name)
         {
@@ -81,6 +82,7 @@ namespace NUnit
             }
 
         }
+
 
         //------negative tests
 
@@ -149,6 +151,14 @@ namespace NUnit
             }
             Assert.Fail(TestMessageHolder.standartAddExpectedExceptionDsntThrow);
         }
+      
+        [Test]
+        public void cantGetProjectNameWithoutCreatingProject()
+        {
+            pc.getProjectName();
+        }
+        //------------test data
+
         public static List<TestCaseData> addStandartWithIncorrectDataTestCases()
         {
             List<TestCaseData> list = new List<TestCaseData>();
@@ -160,7 +170,6 @@ namespace NUnit
             list.Add(new TestCaseData(TestDataHolder.correctStandartName, TestDataHolder.toManyGradesCount, ErrorHolder.standartCantHaveToMuchGrades));
             return list;         
         }
-
         public static List<TestCaseData> createProjectIncorrectNameTestCases()
         {
             List<TestCaseData> list = new List<TestCaseData>();
@@ -170,6 +179,9 @@ namespace NUnit
             return list;
 
         }
+        //тестирование метода получения имени проекта. 
+        //корректные имена: создание проекта  корректным именем
+        //некорректные имена: создание без имени, с нул именем, без вызова создания проекта
 
     }
 }

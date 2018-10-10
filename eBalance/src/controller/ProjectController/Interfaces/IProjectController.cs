@@ -13,8 +13,8 @@ namespace eBalance.src.controller.ProjectController.Interfaces
 
         void createProject(string name);
         void addStandart(string name, int count);
-
         string getProjectName();
+
         string getCurrentStandartName();
         IList<string> getProjectStandartsNames();
         IList<string> getStandartGradesNames(string standartName);

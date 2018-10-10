@@ -60,7 +60,7 @@ namespace eBalance.src.model.Classes
         }
         public IList<string> getParentName()
         {
-            return null;
+            throw new Exception();   
         }
         public void addStandart(IStandart standart)
         {
