@@ -155,7 +155,17 @@ namespace NUnit
         [Test]
         public void cantGetProjectNameWithoutCreatingProject()
         {
-            pc.getProjectName();
+            try
+            {
+                pc.getProjectName();
+            }
+            catch(Exception e)
+            {
+                Assert.AreEqual(ErrorHolder.controllerCantReturnNameOfEmtyProject, e.Message);
+                return;
+            }
+            Assert.Fail();
+
         }
         //------------test data
 

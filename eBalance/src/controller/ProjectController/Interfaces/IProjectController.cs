@@ -16,6 +16,8 @@ namespace eBalance.src.controller.ProjectController.Interfaces
         string getProjectName();
 
         string getCurrentStandartName();
+        void selectStandartByIndex(int index);
+
         IList<string> getProjectStandartsNames();
         IList<string> getStandartGradesNames(string standartName);
         void Dispose();

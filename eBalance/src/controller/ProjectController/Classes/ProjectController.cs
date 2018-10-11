@@ -66,6 +66,14 @@ namespace eBalance.src.controller.ProjectController.Classes
             }
             return currentStandart.getName();
         }
+        public void selectStandartByIndex(int index)
+        {
+           if (projectStandarts.Count<=index)
+            {
+                throw new Exception(ErrorHolder.controllerCantSelectStandartWithIndex);
+            }
+            currentStandart = projectStandarts[index];
+        }
 
         public IList<string> getProjectStandartsNames()
         {

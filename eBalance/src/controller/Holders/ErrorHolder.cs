@@ -37,6 +37,7 @@ namespace eBalance.src.controller.Holders
             ,controllerCantReturnNameOfEmptyCurentStandart ="Ошибка при возвращении имени текущего стандарта. Невозможно вернуть имя стандарта равного Null"
             ,controllerCantReturnListOfStandarts = "Ошибка при возвращении списка стандартов проекта. Невозможно вернуть список стандартов равный Null. "
             ,controllerCantReturnListOfGrades = "Ошибка при возвращении списка оценок стандарта. Невозможно вернуть список оценок равный Null."
+            ,controllerCantSelectStandartWithIndex ="Ошибка при указании выбранного стандарта. Невозможно выбрать стандарт с таким номером"
             ;
 
     }
