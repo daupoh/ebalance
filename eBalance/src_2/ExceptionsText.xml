@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<exceptionsText>
+  <test>TestText</test>
+  <countOfAlternativesOrCriterionLessThenTwo>
+    Ошибка. Матрица оценок не может иметь меньше двух альтернатив или критериев.
+  </countOfAlternativesOrCriterionLessThenTwo>
+  <exceededLimitOfRandomIndexes>
+    Ошибка. Превышен максимально возможный порядок матрицы (15) или порядок меньше минимального (2).
+  </exceededLimitOfRandomIndexes>
+  <wrongExceptionNode>
+    Ошибка. Вызов несуществующего исключения.
+  </wrongExceptionNode>
+  <outOfRangeMatrix>
+    Ошибка. Невозможно вернуть элемент матрицы с указанными номерами строк и столбца.
+  </outOfRangeMatrix>
+  <notValidMatrixGradesValue>
+    Ошибка. Невозможно установить значение в матрицу оценок меньшее\равное 0 или большее\равное 1.
+  </notValidMatrixGradesValue>
+  <notValidMatrixComprassionsValue>
+    Ошибка. Невозможно установить значение в матрицу сравнений меньшее\равное 0 или большее 9.
+  </notValidMatrixComprassionsValue>
+  <cantSetElementOnDiagonal>
+    Ошибка. Невозможно устанавливать значения на диагональ матрицы сравнений.
+  </cantSetElementOnDiagonal>
+  <matrixIsNotInitialize>
+    Ошибка. Матрица не инициализирована.
+  </matrixIsNotInitialize>
+  <nonvalidcriterionweightvector>
+    Ошибка. Вектор не должен быть Null или содержать отрицательные, нулевые или  превышающие 1 значения.
+  </nonvalidcriterionweightvector>
+  <cantGetRelativeConsistency>
+    Ошибка. Невозможно получить относительную согласованность незаполненной матрицы.
+  </cantGetRelativeConsistency>
+</exceptionsText> 

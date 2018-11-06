@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="ProjectControllerNunitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TCMatrixComprassion.cs" />
+    <Compile Include="ТCMatrixGrades.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

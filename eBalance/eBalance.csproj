@@ -73,6 +73,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src_2\models\Matrixes\CMatrixGrades.cs" />
+    <Compile Include="src_2\models\Matrixes\IMatrixGrades.cs" />
+    <Compile Include="src_2\SCXmlHelper.cs" />
+    <Compile Include="src_2\models\Matrixes\CMatrixComprassion.cs" />
+    <Compile Include="src_2\models\Matrixes\IMatrixComprassion.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -97,7 +102,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src_2\models\Matrixes\" />
+    <Content Include="src_2\ExceptionsText.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
