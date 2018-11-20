@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using eBalance.src.view.Forms;
+using eBalance.src_2.views;
 
 namespace eBalance
 {
@@ -17,7 +18,7 @@ namespace eBalance
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fmMainForm());
+            Application.Run(new goalsForm());
         }
     }
 }
