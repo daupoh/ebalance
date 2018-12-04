@@ -13,11 +13,12 @@ namespace eBalance.src_2.models.Entities.Goals
         {
 
         }
-
+        public double Weight { get; }
         public string Name { get; set; }
         public void updateSub(string name, IEntity updated) { }
         public void deleteSub(string name) { }
         public void renameSub(string oldName, string newGradeName) { }
+       
         public double getSubWeight(string name)
         {
             double weight = 0;

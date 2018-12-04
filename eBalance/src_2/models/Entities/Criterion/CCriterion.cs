@@ -14,17 +14,11 @@ namespace eBalance.src_2.models.Entities.Criterion
 
         }
         public string Name { get; set; }
-        public void updateSub(string name, IEntity updated) { }
-        public void deleteSub(string name) { }
-        public void renameSub(string oldName, string newGradeName) { }
+        public double Weight { get; }
 
         public void addStandart(IStandart standart) { }
 
-        public double getSubWeight(string name)
-        {
-            double weight = 0;
-            return weight;
-        }
+       
         public IStandart getStandartByName(string standartName)
         {
             IStandart standart=new CStandart();

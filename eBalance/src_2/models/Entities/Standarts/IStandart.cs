@@ -15,7 +15,7 @@ namespace eBalance.src_2.models.Entities.Standarts
         void setPriorityGrades(string dominantGrade, string recesiveGrade, uint priority);
 
         IGrade getGradeByName(string gradeName);
-        double getGradesWeight(string gradeName);
+       
         IList<string> getGradesNames();
     }
 }

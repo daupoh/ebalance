@@ -9,11 +9,16 @@ namespace eBalance.src_2.models.Entities.Standarts
 {
     class CStandart:IStandart
     {
+        public CStandart()
+        {
+
+        }
+
         public string Name { get; set; }
         public void updateSub(string name, IEntity updated) { }
         public void deleteSub(string name) { }
         public void renameSub(string oldName, string newGradeName) { }
-
+       
         public void addGrade(IGrade grade) { }
         public double getSubWeight(string name)
         {

@@ -11,6 +11,6 @@ namespace eBalance.src_2.models.Entities
         void updateSub(string name, IEntity updated);
         void deleteSub(string name);
         void renameSub(string oldName, string newGradeName);
-        
+        double getSubWeight(string name);
     }
 }

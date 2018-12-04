@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace eBalance.src_2.models.Entities.Criterion
 {
-    interface ICriterion:IEntity
+    interface ICriterion:IWeightEntity
     {
+        
         void addStandart(IStandart standart);
         
         IStandart getStandartByName(string standartName);

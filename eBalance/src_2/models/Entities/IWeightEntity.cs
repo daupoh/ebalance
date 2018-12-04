@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace eBalance.src_2.models.Entities.Grades
+namespace eBalance.src_2.models.Entities
 {
-    interface IGrade:IWeightEntity
+    interface IWeightEntity:IEntity
     {
-
+        double Weight { get; }
     }
 }
