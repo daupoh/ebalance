@@ -74,10 +74,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src_2\models\Entities\Alternatives\IAlternative.cs" />
+    <Compile Include="src_2\models\Entities\Criterion\CCriterion.cs" />
     <Compile Include="src_2\models\Entities\Criterion\ICriterion.cs" />
+    <Compile Include="src_2\models\Entities\Goals\CGoal.cs" />
     <Compile Include="src_2\models\Entities\Goals\IGoal.cs" />
+    <Compile Include="src_2\models\Entities\Grades\CGrade.cs" />
     <Compile Include="src_2\models\Entities\Grades\IGrade.cs" />
     <Compile Include="src_2\models\Entities\IEntity.cs" />
+    <Compile Include="src_2\models\Entities\IParrentEntity.cs" />
+    <Compile Include="src_2\models\Entities\Standarts\CStandart.cs" />
     <Compile Include="src_2\models\Entities\Standarts\IStandart.cs" />
     <Compile Include="src_2\models\Matrixes\CMatrixGrades.cs" />
     <Compile Include="src_2\models\Matrixes\IMatrixGrades.cs" />

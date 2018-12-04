@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eBalance.src_2.models.Entities.Goals
 {
-    interface IGoal:IEntity
+    interface IGoal:IParrentEntity
     {
         void addSubGoal(IGoal goal);
         void addSubGoal(ICriterion criterion);
@@ -18,6 +18,7 @@ namespace eBalance.src_2.models.Entities.Goals
 
         IGoal getSubGoalByName(string subGoalName);
         ICriterion getCriterionByName(string subGoalName);
+        double getCriterionWeight(string criterionName);
         IList<string> getSubGoalsNames();
         //IList<double> getSameNumbersOfSubGoal();
 
