@@ -8,14 +8,9 @@ using System.Threading.Tasks;
 namespace eBalance.src_2.models.Entities.Standarts
 {
     interface IStandart:IParrentEntity
-    {
-        void addGrade(IGrade grade);
-
-        
+    {          
         void setPriorityGrades(string dominantGrade, string recesiveGrade, uint priority);
-
-        IGrade getGradeByName(string gradeName);
-       
+        IGrade getGradeByName(string gradeName);       
         IList<string> getGradesNames();
     }
 }

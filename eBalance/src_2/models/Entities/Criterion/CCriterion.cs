@@ -16,20 +16,15 @@ namespace eBalance.src_2.models.Entities.Criterion
         public string Name { get; set; }
         public double Weight { get; }
 
-        public void addStandart(IStandart standart) { }
+        public void tieToStandart(IStandart standart) { }
 
-       
-        public IStandart getStandartByName(string standartName)
+
+        public IStandart getStandart()  
         {
             IStandart standart=new CStandart();
 
             return standart;
         }
-        public IList<string> getStandartsNames()
-        {
-            IList<string> standartsNames = new List<string>();
-
-            return standartsNames;
-        }
+       
     }
 }

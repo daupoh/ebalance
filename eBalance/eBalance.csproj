@@ -73,6 +73,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src_2\controllers\ICriterionController.cs" />
+    <Compile Include="src_2\controllers\IEntityController.cs" />
+    <Compile Include="src_2\controllers\IGoalController.cs" />
+    <Compile Include="src_2\controllers\IParrentEntityController.cs" />
+    <Compile Include="src_2\controllers\IStandartController.cs" />
     <Compile Include="src_2\models\Entities\Alternatives\IAlternative.cs" />
     <Compile Include="src_2\models\Entities\Criterion\CCriterion.cs" />
     <Compile Include="src_2\models\Entities\Criterion\ICriterion.cs" />
@@ -126,9 +131,7 @@
   <ItemGroup>
     <Content Include="src_2\ExceptionsText.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src_2\controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

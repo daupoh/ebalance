@@ -18,8 +18,7 @@ namespace eBalance.src_2.models.Entities.Standarts
         public void updateSub(string name, IEntity updated) { }
         public void deleteSub(string name) { }
         public void renameSub(string oldName, string newGradeName) { }
-       
-        public void addGrade(IGrade grade) { }
+               
         public double getSubWeight(string name)
         {
             double weight = 0;

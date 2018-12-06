@@ -10,10 +10,8 @@ namespace eBalance.src_2.models.Entities.Criterion
     interface ICriterion:IWeightEntity
     {
         
-        void addStandart(IStandart standart);
+        void tieToStandart(IStandart standart);
         
-        IStandart getStandartByName(string standartName);
-        IList<string> getStandartsNames();
-
+        IStandart getStandart();  
     }
 }
