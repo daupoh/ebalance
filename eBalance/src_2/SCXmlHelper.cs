@@ -10,37 +10,52 @@ namespace eBalance.src_2
     public static class SCXmlHelper
     {
         static XmlDocument m_xmlExceptionsText;
+        static XmlDocument m_xmlConstantValues;
 
         public static string getExceptionsTextByNode(string nodeName)
         {
-            if (m_xmlExceptionsText == null)
+            return getByNodeFrom(nodeName, m_xmlExceptionsText, "wrongExceptionNode", 
+                "C:/Users/user/source/repos/eBalance/eBalance/src_2/ExceptionsText.xml");
+        }
+        public static string getConstantByNode(string nodeName)
+        {
+            return getByNodeFrom(nodeName, m_xmlConstantValues, "wrongExceptionNode",
+               "C:/Users/user/source/repos/eBalance/eBalance/src_2/ConstantValues.xml");
+        }
+        private static string getByNodeFrom(string nodeName, XmlDocument xmlDoc, string wrongNode, string path)
+        {
+            if (wrongNode=="")
             {
-                initializeExceptionsText();
+                throw new FormatException("XML not found exception");
             }
-            string textException = "";
-            XmlElement xRoot = m_xmlExceptionsText.DocumentElement;
+            if (xmlDoc == null)
+            {
+                initializeXml(path,xmlDoc);
+            }
+            string text = "";
+            XmlElement xRoot = xmlDoc.DocumentElement;
             bool nodeHasFinded = false;
             foreach (XmlElement xnode in xRoot)
             {
-               
+
                 if (xnode.LocalName == nodeName)
                 {
-                    textException = xnode.InnerText;
+                    text = xnode.InnerText;
                     nodeHasFinded = true;
                     break;
-                }               
+                }
             }
             if (!nodeHasFinded)
             {
-                throw new FormatException(getExceptionsTextByNode("wrongExceptionNode"));
+                throw new FormatException(getByNodeFrom(wrongNode, xmlDoc,"",path));
             }
-            return textException;
+            return text;
         }
-
-        private static void initializeExceptionsText()
+        private static void initializeXml(string path, XmlDocument xmlDoc)
         {
-            m_xmlExceptionsText = new XmlDocument();
-            m_xmlExceptionsText.Load("C:/Users/user/source/repos/eBalance/eBalance/src_2/ExceptionsText.xml");
+            xmlDoc = new XmlDocument();
+            xmlDoc.Load(path);
+            
         }
     }
 }

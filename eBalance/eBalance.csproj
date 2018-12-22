@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src_2\controllers\CGoalController.cs" />
     <Compile Include="src_2\controllers\ICriterionController.cs" />
     <Compile Include="src_2\controllers\IEntityController.cs" />
     <Compile Include="src_2\controllers\IGoalController.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="src_2\models\Entities\Standarts\IStandart.cs" />
     <Compile Include="src_2\models\Matrixes\CMatrixGrades.cs" />
     <Compile Include="src_2\models\Matrixes\IMatrixGrades.cs" />
+    <Compile Include="src_2\SCChecker.cs" />
     <Compile Include="src_2\SCXmlHelper.cs" />
     <Compile Include="src_2\models\Matrixes\CMatrixComprassion.cs" />
     <Compile Include="src_2\models\Matrixes\IMatrixComprassion.cs" />
@@ -129,6 +131,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="src_2\ConstantValues.xml" />
     <Content Include="src_2\ExceptionsText.xml" />
   </ItemGroup>
   <ItemGroup />

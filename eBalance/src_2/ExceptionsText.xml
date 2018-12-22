@@ -31,4 +31,5 @@
   <cantGetRelativeConsistency>
     Ошибка. Невозможно получить относительную согласованность незаполненной матрицы.
   </cantGetRelativeConsistency>
+  <stringIsEmpty>Ошибка. Для инициализации не может использоваться пустая строка.</stringIsEmpty>
 </exceptionsText> 
