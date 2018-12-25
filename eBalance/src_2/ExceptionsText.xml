@@ -32,4 +32,8 @@
     Ошибка. Невозможно получить относительную согласованность незаполненной матрицы.
   </cantGetRelativeConsistency>
   <stringIsEmpty>Ошибка. Для инициализации не может использоваться пустая строка.</stringIsEmpty>
+  <subGoalsNamesMatches>Ошибка. Совпадают имена критерия и подцели.</subGoalsNamesMatches>
+  <subGoalsNameNotFound>Ошибка. В списке подцелей отсутствует подцель с таким именем.</subGoalsNameNotFound>
+  <subGoalAlreadyExist>Ошибка. Подцель или цель с таким именем уже существует.</subGoalAlreadyExist>
+  <subGoalListsAreNull>Ошибка. Список подцелей или критериев цели равен Null</subGoalListsAreNull>
 </exceptionsText> 

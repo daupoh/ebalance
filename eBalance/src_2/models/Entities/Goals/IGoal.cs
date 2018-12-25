@@ -13,7 +13,7 @@ namespace eBalance.src_2.models.Entities.Goals
         void addSubGoal(ICriterion criterion);
 
       
-        void setPrioritySubGoal(string subGoulDominantName, string subGoalRecesiveName, uint priority);
+        void setPrioritySubGoal(string subGoalDominantName, string subGoalRecesiveName, uint priority);
 
 
         IGoal getSubGoalByName(string subGoalName);

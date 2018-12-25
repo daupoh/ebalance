@@ -90,6 +90,7 @@
     <Compile Include="src_2\models\Entities\IParrentEntity.cs" />
     <Compile Include="src_2\models\Entities\IWeightEntity.cs" />
     <Compile Include="src_2\models\Entities\IWeightParrentEntity.cs" />
+    <Compile Include="src_2\models\Entities\PriorityKeeper\SCPriorityKeeper.cs" />
     <Compile Include="src_2\models\Entities\Standarts\CStandart.cs" />
     <Compile Include="src_2\models\Entities\Standarts\IStandart.cs" />
     <Compile Include="src_2\models\Matrixes\CMatrixGrades.cs" />
